@@ -86,7 +86,8 @@ namespace SalFestival2015.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "Id,post_auid,post_title,post_date,year,month,post_content,post_excerpt,post_catid,post_modified,post_status,post_parent,post_menu_order,post_img,post_price")] tbl_posts tbl_posts)
         {
             if (ModelState.IsValid)

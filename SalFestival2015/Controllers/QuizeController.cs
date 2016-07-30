@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PagedList;
 using SalFestival2015.Models;
 using System.IO;
+using System.Web.Script.Serialization;
 
 namespace SalFestival2015.Controllers
 {
@@ -150,6 +151,50 @@ namespace SalFestival2015.Controllers
         //public ActionResult AddDialyQuize(FormCollection frm)
         public ActionResult AddDialyQuize2(string date, string name, string email, string tel, string qans, string qno)
         {
+            //            //ctsApp capp = new ctsApp();
+            //            List<QuizeFestival> lstquize = new List<QuizeFestival>();
+            //            QuizeFestival quize = new QuizeFestival();
+            //            quize.date = DateTime.Now;
+            //            quize.name = name;
+            //            quize.email = email;
+            //            quize.tel = tel;
+            //            quize.qans =qans;
+            //            quize.qno = qno;
+
+
+            //            lstquize.Add(quize);
+
+
+            //            //get the Json filepath  
+            //            string file = Server.MapPath("~//uploads/quize.json");
+            //            //deserialize JSON from file  
+            //            string Json = System.IO.File.ReadAllText(file);
+            //            JavaScriptSerializer ser = new JavaScriptSerializer();
+            //            var personlist = ser.Deserialize<List<QuizeFestival>>(Json);
+
+            //            if (personlist !=null)
+            //            {
+            ////here we are adding the new added data to the previous ones
+            //            foreach (var itm in personlist)
+            //            {
+            //                lstquize.Add(itm);
+            //            }
+            //            }
+
+            //            // retrive the data from table  
+
+            //            // Pass the "personlist" object for conversion object to JSON string  
+            //            string jsondata = new JavaScriptSerializer().Serialize(lstquize);
+            //            string path = Server.MapPath("~/uploads/");
+            //            // Write that JSON to txt file,  
+            //            System.IO.File.WriteAllText(path + "quize.json", jsondata);
+            //            TempData["msg"] = "لقد تم إضافة  الإيجابة بنجاح";
+            //            return RedirectToAction("DisplayQuize");
+
+
+
+
+
             //tbl_gust_Answers gans = new tbl_gust_Answers();
             //gans.g_date = DateTime.Now;
             //gans.g_name = frm["g_name"];
@@ -168,8 +213,8 @@ namespace SalFestival2015.Controllers
             //sw.Close();
             //return View("QThanks");
             //return Redirect("http://iramoman.com");
-           return Redirect("http://iramoman.com/home/AddDialyQuize/?date="+DateTime.Now+"&name="+name+"&email="+email+"&tel="+tel+"&qans="+qans+"&qno="+qno);
-           //return Redirect("http://iramoman.com/home/AddDialyQuize/?date=" + DateTime.Now + "&name=" + "11111" + "&email=" + "2222" + "&tel=" + "33333" + "&qans=" + "444444" + "&qno=" + "55555");
+            return Redirect("http://altersanah.com/home/AddDialyQuize/?date="+DateTime.Now+"&name="+name+"&email="+email+"&tel="+tel+"&qans="+qans+"&qno="+qno);
+            //return Redirect("http://iramoman.com/home/AddDialyQuize/?date=" + DateTime.Now + "&name=" + "11111" + "&email=" + "2222" + "&tel=" + "33333" + "&qans=" + "444444" + "&qno=" + "55555");
         }
         //?artistName=cher&apiKey=XXX
         public ActionResult QThanks()

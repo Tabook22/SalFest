@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="salalahDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cstapp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cdate" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="IdNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="200" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contest" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="cusInfo">
     <Key>
       <PropertyRef Name="Id" />
@@ -234,8 +246,8 @@
     <Property Name="post_date" Type="datetime" />
     <Property Name="year" Type="nvarchar" MaxLength="50" />
     <Property Name="month" Type="nvarchar" MaxLength="50" />
-    <Property Name="post_content" Type="nvarchar(max)" />
-    <Property Name="post_excerpt" Type="nvarchar(max)" />
+    <Property Name="post_content" Type="ntext" />
+    <Property Name="post_excerpt" Type="ntext" />
     <Property Name="post_catid" Type="nvarchar" MaxLength="100" />
     <Property Name="post_modified" Type="datetime" />
     <Property Name="post_status" Type="int" />
@@ -293,6 +305,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="salalahDBModelStoreContainer">
+    <EntitySet Name="cstapp" EntityType="Self.cstapp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="cusInfo" EntityType="Self.cusInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="loc" EntityType="Self.loc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="loc_markes" EntityType="Self.loc_markes" Schema="dbo" store:Type="Tables" />

@@ -12,5 +12,6 @@ namespace SalFestival2015.Models
         public int PageSize { get; set; }
         public int TotalRecord { get; set; }
         public int NoOfPages { get; set; }
+        public DateTime postDate { get; set; }
     }
 }

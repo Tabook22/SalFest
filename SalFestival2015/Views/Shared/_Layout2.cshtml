@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - مهرجان صلالة السياحي</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/css/templatemo_misc.css" rel="stylesheet" />
     <link href="~/Content/css/templatemo_style.css" rel="stylesheet" />
 
@@ -44,8 +45,10 @@
                 <ul>
                     <li><a class="show-1 templatemo_home" href="http://www.salalahfestival.gov.om/Home/Index">الرئيسية</a></li>
                     <li><a class="show-2 templatemo_page2" href="http://www.salalahfestival.gov.om/Home/getImgGal">معرض الصور</a></li>
-                    <li><a class="show-3 templatemo_page3" href="https://docs.google.com/forms/d/1llIwYpyI_IQORkXEMyMawzwQgZTZMX75occg_8N6KRs/viewform?c=0&w=1"> إستبيان المهرجان</a></li>
-                    <li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">العرض المباشر</a></li>
+                    <li><a class="show-2 templatemo_page2" href='@Url.Action("SnapChatFes","home")'>سناب شات</a></li>
+
+                    @*<li><a class="show-3 templatemo_page3" href="https://docs.google.com/forms/d/1llIwYpyI_IQORkXEMyMawzwQgZTZMX75occg_8N6KRs/viewform?c=0&w=1"> إستبيان المهرجان</a></li>
+                    <li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">العرض المباشر</a></li>*@
                 </ul>
             </div>
             <div class="container">
@@ -71,6 +74,15 @@
                                 </a>
                             </li>
                             <li>
+                                <a class="show-3 templatemo_page3" href='@Url.Action("SnapChatFes","home")' style="color:yellow;">
+                                    <span class="fa fa-snapchat" aria-hidden="true"></span>
+
+
+
+                                    سناب شات
+                                </a>
+                            </li>
+                            @*<li>
                                 <a class="show-3 templatemo_page3" href="https://docs.google.com/forms/d/1llIwYpyI_IQORkXEMyMawzwQgZTZMX75occg_8N6KRs/viewform?c=0&w=1">
                                     <span class="fa fa-cogs"></span>
                                     إستبيان المهرجان
@@ -83,7 +95,7 @@
                                     </span>
                                     العرض المباشر
                                 </a>
-                            </li>
+                            </li>*@
                         </ul>
                         <img id="sitetitle" src="~/Content/images/sitetitle2.png" class="img-responsive" />
                     </div> <!-- /.col-md-12 -->
@@ -106,7 +118,7 @@
     <div class="templatemo_footer footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 col-sm-12">Copyright &copy; 2015 مهرجان صلالة السياحي</div>
+                <div class="col-md-9 col-sm-12">Copyright &copy; 2016 مهرجان صلالة السياحي</div>
                 <div class="col-md-3 col-sm-12 templatemo_rfooter">
 
                     <a href="http://www.facebook.com/DhofarMunicipality">

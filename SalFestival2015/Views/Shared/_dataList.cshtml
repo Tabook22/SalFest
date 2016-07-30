@@ -1,8 +1,9 @@
 ﻿@model SalFestival2015.Models.PostDataModel
 
 @{
-    var grid = new WebGrid(rowsPerPage: Model.PageSize);
-    grid.Bind(Model.mPost, autoSortAndPage: false, rowCount: Model.TotalRecord);
+    var grid = new WebGrid(rowsPerPage:20, canSort: true, defaultSort: "Id");
+    grid.Bind(Model.mPost);
+    grid.SortDirection = SortDirection.Descending;
 }
 <div id="mPstContent">
     @grid.GetHtml(
@@ -18,7 +19,7 @@
                         //grid.Column(header: "صورة", format: (item) => Html.Raw("<span class='pstImg'>" + item.post_img + "</span>")),
                         @*grid.Column(header: "Favorite",format: @<text><a href="@Url.Action("Favorite", "User", new { id = item.Id })">
                             <img src='@item.post_img' alt="YourText" title="YourText" style="width:32px;height:32px;"></a></text>),*@
-                                                                                                                                        grid.Column(header: "", format: @<text>
+                       grid.Column(header: "", format: @<text>
         <img src='@item.post_img' class="pstImg" alt="لا توجد صورة" title="YourText" style="width:32px;height:32px;display:none;">
                                                                                                                                         </text>),
                                                     grid.Column(header: "حالة المقالة", format: (item) =>

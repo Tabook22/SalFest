@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - مهرجان صلالة السياحي</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <!--Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/css/templatemo_misc.css" rel="stylesheet" />
     <link href="~/Content/css/templatemo_style.css" rel="stylesheet" />
 
@@ -72,10 +73,10 @@
                 <ul>
                         <li><a class="show-1 templatemo_home" href="http://www.salalahfestival.gov.om/Home/Index">الرئيسية</a></li>
                         <li><a class="show-2 templatemo_page2" href="http://www.salalahfestival.gov.om/Home/getImgGal">معرض الصور</a></li>
-                        <li><a class="show-3 templatemo_page3" href="https://docs.google.com/forms/d/1llIwYpyI_IQORkXEMyMawzwQgZTZMX75occg_8N6KRs/viewform?c=0&w=1"> إستبيان المهرجان</a></li>
-                        <li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">العرض المباشر</a></li>
-                    <li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">مسابقة المهرجان</a></li>
-                    <li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">العروض و الدعايات</a></li>
+                    <li><a class="show-2 templatemo_page2" href='@Url.Action("SnapChatFes","home")'>سناب شات</a></li>
+                        @*<li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">العرض المباشر</a></li>*@
+                    @*<li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">مسابقة المهرجان</a></li>
+                    <li><a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">العروض و الدعايات</a></li>*@
                     </ul>
             </div>
             <div class="container">
@@ -101,19 +102,22 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="show-3 templatemo_page3" href="https://docs.google.com/forms/d/1llIwYpyI_IQORkXEMyMawzwQgZTZMX75occg_8N6KRs/viewform?c=0&w=1">
-                                    <span class="fa fa-cogs"></span>
-                                    إستبيان المهرجان
+                                <a class="show-3 templatemo_page3" href='@Url.Action("SnapChatFes","home")' style="color:yellow;">
+                                    <span class="fa fa-snapchat" aria-hidden="true"></span>
+
+
+
+                                    سناب شات
                                 </a>
                             </li>
-                            <li>
+                            @*<li>
                                 <a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">
                                     <span class="fa fa-video-camera">
 
                                     </span>
                                     العرض المباشر
                                 </a>
-                            </li>
+                            </li>*@
                             @*<li class="visible-xs visible-sm">
                                 <a class="show-5 templatemo_page5" href="http://livestream.com/3dmaxmedia/events/4214535">
                                     <span class="fa fa-video-camera">
@@ -146,52 +150,51 @@
         <div class="visible-xs visible-sm" style="padding-top:20px;text-align:center;">
             <img src="~/Content/images/small_logo.png" />
         </div>
-        <div class="hidden-xs hidden-sm col-md-12 col-lg-12">
-            <div class="img-container">
-                <div class="bg-holder">
-                    <div class="img-holder">
-                        @*<div class="text-holder">
-                            <h1>This is the main title</h1>
-                            <h4>أستغفر الله و أتوب إلية</h4>
-                        </div>*@
-
-                    </div>
-                </div>
+        
+        <div class="visible-xs visible-sm visible-md visible-lg col-md-3" >
+                <!--Side menu-->
+                <aside class="site-left" style="background-color:#fff;">
+                    <ul>
+                        <li class="visible-md visible-lg" style="text-align:center;">
+                            <img src="~/Content/images/oman.png" />
+                        </li>
+                        <li style="text-align:center;">
+                            <a href='@Url.Action("DisplayQuize", "Quize")'>
+                                <span style="font-weight:bold; color:red;padding:20px 0;display:block;">
+                                    مسابقة الموقع الإسبوعية
+                                </span>
+                            </a>
+                            <a href='@Url.Action("DisplayQuize", "Quize")'>
+                                <img src="~/Content/images/quize3.jpg" style="border-top:1px solid red;padding:5px;" />
+                            </a>
+                        </li>
+                        @*<li><a href="#">أرقام تهمك</a></li>
+                    <li><a href="#">روابط مهمة</a></li>
+                    <li><a href="#">مسابقة الموقع</a></li>*@
+                        <li style="margin-top:10px; text-align:center">
+                            <a href='@Url.Action("contestApp","Home")'>
+                                <span style="font-weight:bold; color:red;padding:20px 0;display:block;">
+                                    مسابقة الرماية
+                                </span>
+                            </a>
+                            <a href='@Url.Action("contestApp","Home")'>
+                                <img src="~/Content/images/unnamed2_small.jpg" style="border-top:1px solid red;padding:5px;" />
+                            </a>
+                        </li>
+                        @*<li>
+                            <img class="advc" src="~/Content/images/adv2.jpg" />
+                        </li>*@
+                    </ul>
+                    @*@{Html.RenderAction("getSideAdv", "Home");}*@
+                </aside>
+                <!-- end of side menu-->
             </div>
-        </div>
-        <div class="visible-md visible-lg col-md-3" >
-            <!--Side menu-->
-            <aside class="site-left">
-                <ul>
-                    <li>
-                        <img src="~/Content/images/oman.png" />
-                    </li>
-                    <li>
-                    <a href='@Url.Action("DisplayQuize", "Quize")'>
-                        <img src="~/Content/images/quize3.jpg" />
-                    </a>
-                </li>
-                     <li><a href="#">أرقام تهمك</a></li>
-                <li><a href="#">روابط مهمة</a></li>
-                <li><a href="#">مسابقة الموقع</a></li>
-                    <li>
-                    <img class="advc" src="~/Content/images/adv1.jpg" />
-                </li>
-                <li>
-                    <img class="advc" src="~/Content/images/adv2.jpg" />
-                </li>
-                </ul>
-                @{Html.RenderAction("getSideAdv", "Home");}
-            </aside>
-            <!-- end of side menu-->
-        </div>
         <div class="col-md-9">
             @RenderBody()
         </div>
       
 
         @*@{Html.RenderAction("Index", "Sponsers");}*@
-  
   </div>
     <!-- footer start -->
     <div class="templatemo_footer footer">

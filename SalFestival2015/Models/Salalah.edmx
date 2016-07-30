@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="salalahDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cstapp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cdate" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="300" />
+          <Property Name="IdNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="200" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contest" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="cusInfo">
           <Key>
             <PropertyRef Name="Id" />
@@ -239,8 +251,8 @@
           <Property Name="post_date" Type="datetime" />
           <Property Name="year" Type="nvarchar" MaxLength="50" />
           <Property Name="month" Type="nvarchar" MaxLength="50" />
-          <Property Name="post_content" Type="nvarchar(max)" />
-          <Property Name="post_excerpt" Type="nvarchar(max)" />
+          <Property Name="post_content" Type="ntext" />
+          <Property Name="post_excerpt" Type="ntext" />
           <Property Name="post_catid" Type="nvarchar" MaxLength="100" />
           <Property Name="post_modified" Type="datetime" />
           <Property Name="post_status" Type="int" />
@@ -298,6 +310,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="salalahDBModelStoreContainer">
+          <EntitySet Name="cstapp" EntityType="Self.cstapp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cusInfo" EntityType="Self.cusInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="loc" EntityType="Self.loc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="loc_markes" EntityType="Self.loc_markes" Schema="dbo" store:Type="Tables" />
@@ -556,6 +569,7 @@
           <EntitySet Name="tbl_siteSections" EntityType="salalahDBModel.tbl_siteSections" />
           <EntitySet Name="tbl_users" EntityType="salalahDBModel.tbl_users" />
           <EntitySet Name="tbl_posts" EntityType="salalahDBModel.tbl_posts" />
+          <EntitySet Name="cstapps" EntityType="salalahDBModel.cstapp" />
         </EntityContainer>
         <EntityType Name="tbl_articles">
           <Key>
@@ -658,6 +672,18 @@
           <Property Name="post_menu_order" Type="Int32" />
           <Property Name="post_img" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="post_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="cstapp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cdate" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -951,6 +977,19 @@
                 <ScalarProperty Name="post_title" ColumnName="post_title" />
                 <ScalarProperty Name="post_auid" ColumnName="post_auid" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cstapps">
+            <EntityTypeMapping TypeName="salalahDBModel.cstapp">
+              <MappingFragment StoreEntitySet="cstapp">
+                <ScalarProperty Name="Contest" ColumnName="Contest" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="IdNo" ColumnName="IdNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

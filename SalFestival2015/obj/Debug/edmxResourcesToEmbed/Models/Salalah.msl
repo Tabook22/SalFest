@@ -290,5 +290,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="cstapps">
+      <EntityTypeMapping TypeName="salalahDBModel.cstapp">
+        <MappingFragment StoreEntitySet="cstapp">
+          <ScalarProperty Name="Contest" ColumnName="Contest" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="IdNo" ColumnName="IdNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

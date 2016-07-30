@@ -11,15 +11,12 @@ namespace SalFestival2015.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web.Mvc;
     
     public partial class tbl_quize
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> q_date { get; set; }
         public Nullable<int> q_no { get; set; }
-
-    [AllowHtml]
         public string q_question { get; set; }
         public string q_ans1 { get; set; }
         public string q_ans2 { get; set; }

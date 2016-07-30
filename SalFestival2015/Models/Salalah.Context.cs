@@ -46,5 +46,6 @@ namespace SalFestival2015.Models
         public virtual DbSet<tbl_siteSections> tbl_siteSections { get; set; }
         public virtual DbSet<tbl_users> tbl_users { get; set; }
         public virtual DbSet<tbl_posts> tbl_posts { get; set; }
+        public virtual DbSet<cstapp> cstapps { get; set; }
     }
 }

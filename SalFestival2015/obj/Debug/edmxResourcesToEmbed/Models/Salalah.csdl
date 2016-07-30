@@ -224,6 +224,7 @@
     <EntitySet Name="tbl_siteSections" EntityType="salalahDBModel.tbl_siteSections" />
     <EntitySet Name="tbl_users" EntityType="salalahDBModel.tbl_users" />
     <EntitySet Name="tbl_posts" EntityType="salalahDBModel.tbl_posts" />
+    <EntitySet Name="cstapps" EntityType="salalahDBModel.cstapp" />
   </EntityContainer>
   <EntityType Name="tbl_articles">
     <Key>
@@ -326,5 +327,17 @@
     <Property Name="post_menu_order" Type="Int32" />
     <Property Name="post_img" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="post_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cstapp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cdate" Type="DateTime" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

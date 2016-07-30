@@ -28,6 +28,7 @@
         <EntityTypeShape EntityType="salalahDBModel.tbl_siteSections" Width="1.5" PointX="0.75" PointY="12.75" />
         <EntityTypeShape EntityType="salalahDBModel.tbl_users" Width="1.5" PointX="12.75" PointY="3.75" />
         <EntityTypeShape EntityType="salalahDBModel.tbl_posts" Width="1.5" PointX="8.375" PointY="11.75" />
+        <EntityTypeShape EntityType="salalahDBModel.cstapp" Width="1.5" PointX="13.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

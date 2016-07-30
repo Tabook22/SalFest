@@ -11,8 +11,6 @@ namespace SalFestival2015.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
     
     public partial class tbl_posts
     {
@@ -22,10 +20,7 @@ namespace SalFestival2015.Models
         public Nullable<System.DateTime> post_date { get; set; }
         public string year { get; set; }
         public string month { get; set; }
-        [AllowHtml]
         public string post_content { get; set; }
-
-       [AllowHtml]
         public string post_excerpt { get; set; }
         public string post_catid { get; set; }
         public Nullable<System.DateTime> post_modified { get; set; }

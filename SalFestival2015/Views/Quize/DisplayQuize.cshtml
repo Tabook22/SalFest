@@ -9,83 +9,164 @@
         
         <section id="q2" class="col-sm-9" style="margin-top:100px;">
             <p class="wlst" style="margin-top:5px;padding:10px; font-size:18px;font-weight:bold; border:1px solid #ff0000;background-color:red;color:#fff;">
-                <a href='@Url.Action("Winnerslist","DailyWinners")' style="color:#fff;">قائمة أسماء الفائزين بالسؤال الإسبوعي</a>
-                </p>
-                <div class="quize" style="margin-bottom:40px;">
-                    @foreach (var item in Model)
-                    {
-<p>
-                        رقم السؤال:<span class="qstno">@item.q_no</span>
+                @*<a href='@Url.Action("Winnerslist","DailyWinners")' style="color:#fff;">قائمة أسماء الفائزين بالسؤال الإسبوعي</a>*@
+               <a href="#" style="color:#fff;">قائمة أسماء الفائزين بالسؤال الإسبوعي</a>
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            أحمد سعد جمعان غفرم
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>حامد سهيل سعيد الرواس
+</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>خالد بن عبدالله عامر الشنفري
+</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>سناء عبدالله صالح ضحى
+</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>عبدالله سعيد الصوري عاشور فضه
+</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>عبدالله مسلم سعيد عامر جيد 
+</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>عواد مبارك سبيت
+</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>عواطف دارس بوشحام
+</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>فيصل عبدالرضا فرج سليم
+</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>مسلم محمد مسلم باقي
+</td>
+                    </tr>
+                </table>
+
+                <p style="font-weight:bold;color:green;margin-top:20px;">
+                    إجابة السؤال السابق: بلاد بونت
                     </p>
 
-                    @Html.Raw(@item.q_question)
+            <div class="quize" style="margin-bottom:40px;">
+                @foreach (var item in Model)
+                {
+                    <p>
+                        رقم السؤال:<span class="qstno">@item.q_no</span>
+                    </p>
+                    @*if (!string.IsNullOrWhiteSpace(item.q_question))
+                    {
+                        <script type="text/javascript">
+                            alert("أستغفر الله و أتوب إلية");
+                        </script>
+                    }
+                    else
+                    {
+                        <script type="text/javascript">
+                            alert("الحمد لله رب العالمين");
+                        </script>
+                    }*@
 
-                    <div id="quize_img">
-                        <img src='@Url.Content(@item.q_img)' alt="صورة السؤال" />
+                    @*@((item.q_question == null) ? "" : @item.q_question)*@
+                @Html.Raw(@item.q_question)
+
+                    <div id = "quize_img" >
+
+
+                    <img src = '@Url.Content(@item.q_img)' alt = "صورة السؤال" class="img-responsive"/>
+
+
+                    </div >
+
+
+                    <div >
+
+
+                    <div class="form-group">
+                    <label class="control-label col-md-10 ">@item.q_ans1</label>
+                    <div class="col-md-2">
+                        @Html.RadioButton("rbGrp", "1", false, new { @class = "form-control" })
                     </div>
-                    <div>
-                        <div class="form-group">
-                            <label class="control-label col-md-10 ">@item.q_ans1</label>
-                            <div class="col-md-2">
-                                @Html.RadioButton("rbGrp", "1", false, new { @class = "form-control" })
+                </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-10 ">@item.q_ans2</label>
+                                <div class="col-md-2">
+                                    @Html.RadioButton("rbGrp", "2", false, new { @class = "form-control" })
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-10 ">@item.q_ans2</label>
-                            <div class="col-md-2">
-                                @Html.RadioButton("rbGrp", "2", false, new { @class = "form-control" })
+                            <div class="form-group">
+                                <label class="control-label col-md-10 ">@item.q_ans3</label>
+                                <div class="col-md-2">
+                                    @Html.RadioButton("rbGrp", "3", false, new { @class = "form-control" })
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-10 ">@item.q_ans3</label>
-                            <div class="col-md-2">
-                                @Html.RadioButton("rbGrp", "3", false, new { @class = "form-control" })
-                            </div>
-                        </div>
-                    </div>
-                }
-                    </div>
-           
+</div>
+                        }
+            </div>
+
             <div class="gstdetails">
 
                 <div class="form-group">
 
                     <div class="col-md-10">
-                        <input type="text" id="name" class="form-control" />
+                        <input type = "text" id="name" class="form-control" />
 
                     </div>
                     <label class="control-label col-md-2">إسم المشارك</label>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10">
-                        <input type="text" id="email" class="form-control" />
+                        <input type = "text" id="email" class="form-control" />
                     </div>
                     <label class="control-label col-md-2">البريد الإلكتروني</label>
                 </div>
                 <div class="form-group">
                     <div class="col-md-10">
-                        <input type="text" id="tel" class="form-control" />
+                        <input type = "text" id="tel" class="form-control" />
                     </div>
                     <label class="control-label col-md-2">الهاتف</label>
                 </div>
 
 
-                @*<div class="form-group">
+            <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <a href='@Url.Action("AddDialyQuize2","quize")'>ddddddd</a>
+                        @*<a href='@Url.Action("AddDialyQuize2","quize")'>ddddddd</a>*@
 
                         <input type="button" id="sfrm" value="إرسال الإجابة" class="btn btn-default" />
                     </div>
-                </div>*@
-                <a href='@Url.Action("AddDialyQuize2", "Quize", new { @date = "asdsdf", @name = "DDDD", @email = "Dddd", @tel = "sdfsd", @qans = "dddd", @qno = "ddd" })' class="btn btn-default">
+                </div>
+                @*<a href = '@Url.Action("AddDialyQuize2", "Quize", new { @date = "asdsdf", @name = "DDDD", @email = "Dddd", @tel = "sdfsd", @qans = "dddd", @qno = "ddd" })' class="btn btn-default">
 
                     أرسل الإيجابة
-                </a>
+                </a>*@
 
 
-                @*@{Html.RenderAction("AddDialyQuize");}*@
-            </div>
-        </section>
+
+        @*@{Html.RenderAction("AddDialyQuize");}*@
+        </div>
+    </section>
         <section id="q1" class="col-sm-3" style="margin-top:100px;">
             <h4>السؤال الإسبوعي</h4>
             <div id="quize-spoonsers">
@@ -109,7 +190,7 @@
 
                 <p>
                     <br /><span style="color:#995524;">
-                        عشرون فائزاً نهاية كل إسبوع<br />
+                        عشرة فائزين نهاية كل إسبوع<br />
                         لكل فائز 50 ر.ع
                     </span>
                 </p>
@@ -174,20 +255,20 @@
                     data: '',
                     dataType: 'html',
                     complete: function (xmlHttp) {
-                        // xmlHttp is a XMLHttpRquest object
+                       //xmlHttp is a XMLHttpRquest object
                         if (xmlHttp.code != 200) {
-                            top.location.href = 'http://iramoman.com/home/AddDialyQuize/?date=' + mdate + "&name=" + name + "&email=" + email + "&tel=" + tel + "&qans=" + qans + "&qno=" + qno;
+                            top.location.href = 'http://altersanah.com/home/AddDialyQuize/?date=' + mdate + "&name=" + name + "&email=" + email + "&tel=" + tel + "&qans=" + qans + "&qno=" + qno;
                         }
                     }
 
                 });
             }
-            $.get('@Url.Action("AddDialyQuize2")', { date: mdate, name: name, email:email, tel:tel, qans:qans, qno:qno }, function (data) {
+         // $.get('@Url.Action("AddDialyQuize2")', { date: mdate, name: name, email:email, tel:tel, qans:qans, qno:qno }, function (data) {
                // Populate your "rData" element with the results
                 $("#rData").html(data);
-            });
+          // });
 
-            $.ajax({ url: 'AddDialyQuize2?date='+mdate+"&name="+name+"&email="+email+"&tel="+tel+"&qans="+qans+"&qno="+qno });
+            //$.ajax({ url: 'AddDialyQuize2?date='+mdate+"&name="+name+"&email="+email+"&tel="+tel+"&qans="+qans+"&qno="+qno });
         });
     });
 </script>
